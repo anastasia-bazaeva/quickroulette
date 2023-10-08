@@ -1,0 +1,51 @@
+@import url(../src/ui/common/fonts/fonts.css);
+:root {
+  --colors-interface-white: #ffffff;
+  --colors-interface-black: #000000;
+  --colors-interface-dark-primary: #1F1B24;
+  --colors-interface-dark-surface: #121212;
+  --colors-interface-medium-dark: #332940;
+  --colors-interface-primary: #BB86FC;
+  --colors-interface-primary-variant: #3700B3;
+  --colors-interface-secondary: #03DAC5;
+  --colors-interface-secondary-variant: #018786;
+  --colors-interface-accent: #FF7597;
+  --colors-interface-accent-variant: #FF0266;
+  --colors-interface-error: #CF6679;
+  --colors-interface-error-variant: #B00020;
+}
+
+body {
+  margin: 0 auto;
+  padding: 0;
+  background-color: var(--colors-interface-black);
+  color:var(--colors-interface-white);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif, 'Ifkica';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.root {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  position: relative;
+  scrollbar-width: thin;
+  display: flex;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1; 
+}
+
+footer {
+  flex: 0;
+  /* flex-shrink: ; с этим свойством футер всегда сохранит свою ширину*/
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}

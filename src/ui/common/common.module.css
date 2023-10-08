@@ -1,0 +1,21 @@
+.mainPageWrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.text {
+    margin: 0;
+    text-decoration: none;
+    color: var(--colors-interface-white);
+}
+
+.smallText {
+    text-decoration: none;
+    color: var(--colors-interface-white);
+}
+
+.link:hover {
+    opacity: 0.8;
+}

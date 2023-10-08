@@ -1,0 +1,50 @@
+.wrapper {
+    padding-top: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 36px;
+}
+
+
+.mainText {
+    margin: 0;
+    font-size: 60px;
+    font-family: 'Ifkica';
+    text-align: center;
+    font-weight: 900;
+    max-width: 900px;
+}
+
+.linkText {
+    margin-top: 0;
+    font-family: 'Ifkica';
+    text-decoration: none;
+    color: var(--colors-interface-white);
+}
+
+.buttonZone {
+    display: flex;
+    gap: 16px;
+    padding: 30px;
+    /* background: -webkit-linear-gradient(left, black, var(--colors-interface-medium-dark), black); */
+}
+
+.background {
+    overflow: hidden;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    z-index: -1;
+}
+
+.backgroundVideo {
+    height: 450px;
+    width: auto;
+    -o-object-fit: cover;
+    object-fit: cover;
+}

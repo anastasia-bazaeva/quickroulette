@@ -1,0 +1,12 @@
+.image {
+    max-width: 300px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.cardWindow {
+    padding: 16px 50px;
+    max-width: 300px;
+    border-radius: 25px;
+    background: color-mix(in srgb, var(--colors-interface-primary) 8%, transparent);
+}

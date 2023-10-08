@@ -1,0 +1,39 @@
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.fieldsWrapper {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+}
+
+.searchBar {
+    display: flex;
+    gap: 30px;
+}
+
+.searchList {
+    width: calc(100% - 30px*2);
+    list-style: none;
+    padding: 30px;
+    margin: 0;
+    column-gap: 18px;
+    row-gap: 36px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* grid-template-rows: auto; */
+    justify-content: center;
+}
+.searchItem {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 15px;
+    background: color-mix(in srgb, var(--colors-interface-primary) 8%, transparent);
+    padding-bottom: 16px;
+}

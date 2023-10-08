@@ -1,0 +1,24 @@
+.field {
+    min-width: 350px;
+    min-height: 36px;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.field::placeholder {
+    color: #212529;
+    opacity: 0.4;
+  }
+
+  .field:focus {
+    color: #212529;
+    background-color: #fff;
+    border-color: #bdbdbd;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+  }  
+
+  .field:disabled {
+    background-color: #bdbdbd;
+    opacity: 1;
+  }

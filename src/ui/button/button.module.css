@@ -1,0 +1,35 @@
+.button {
+    border-radius: 6px;
+    min-height: 40px;
+    padding: 16px;
+    text-align: center;
+    border: none;
+    font-weight: bold;
+    font-family: 'Ifkica';
+    cursor: pointer;
+}
+.button:hover {
+    opacity: 0.8;
+}
+
+.default {
+    background: none;
+    color: var(--colors-interface-white);
+    border: 2px solid var(--colors-interface-primary);
+    /* background-color: var(--colors-interface-primary); */
+    /* color: var(--colors-interface-dark-surface)  */
+}
+
+.pale {
+    background: none;
+    color: var(--colors-interface-primary);
+}
+
+.teal {
+      background-size: 110% auto;
+      background-position: center;
+      background: none;
+      color: var(--colors-interface-white);
+      font-weight: 900;
+      border: 2px solid var(--colors-interface-secondary);
+}

@@ -1,0 +1,23 @@
+@font-face {
+    font-family: 'Ifkica';
+    src: url(./ifkica-bold.ttf) format('truetype'),
+         url(./ifkica-bold.woff) format('woff');
+    font-style: bolder;
+    font-weight: 900;
+  }
+
+  @font-face {
+     font-family: 'Ifkica';
+     src: url(./ifkica-regular.ttf) format('truetype'),
+          url(./ifkica-regular.woff) format('woff');
+     font-style: bold;
+     font-weight: 700;
+   }
+
+   @font-face {
+     font-family: 'Ifkica';
+     src: url(./ifkica-light.ttf) format('truetype'),
+          url(./ifkica-light.woff) format('woff');
+     font-style: normal;
+     font-weight: 400;
+   }

@@ -1,0 +1,39 @@
+.wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 50px;
+}
+
+.inputZone{
+    display: flex;
+    flex-direction: column;
+    gap: 36px;
+}
+
+.inputWrapper {
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+}
+
+.radioBar{
+    display: flex;
+    gap: 16px;
+}
+
+.selectBar {
+    display: flex;
+    gap: 16px;
+}
+
+.barText {
+    margin: 0;
+}
+
+.selectedZone{
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
