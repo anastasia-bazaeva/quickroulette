@@ -10,6 +10,7 @@ import { useAppDispatch, useAppSelector } from 'services/store'
 import { clearSearch, setSearch } from 'services/roulette-model'
 import { Button } from 'ui/button/button'
 import { SearchCard } from 'components/search-card/search-card'
+import { RouletteBar } from 'components/roulette-bar/roulette-bar'
 
 export const MyRoulette = () => {
     const [value, setValue] = useState(null);
@@ -43,6 +44,7 @@ export const MyRoulette = () => {
     
     return(
         <section className={styles.wrapper}>
+            <RouletteBar />
             <h3 className={commonStyles.text}>Найди и добавь варианты в рулетку, или введи название фильма вручную</h3>
             <div className={styles.fieldsWrapper}>
                 <form className={styles.searchBar}>

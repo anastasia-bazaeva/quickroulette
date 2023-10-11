@@ -8,7 +8,7 @@ import pic6 from '../ui/pics/photo-1693786229428-6167a59d554a.jpg';
 import video1 from '../ui/pics/72f38ef3-234e-404f-8413-5f24dea154a0.mp4';
 import wildWasteland from '../ui/pics/Perk_wild_wasteland.png';
 import wildWastelandPale from '../ui/pics/Perk_wild_wasteland.webp';
-
+import pointer from '../ui/pics/pointer-icon.svg';
 
 export const pics = [
     pic1,
@@ -25,6 +25,7 @@ export const pickRandPick = () => {
 
 export const backVid = video1;
 export const loaderPic = wildWasteland;
+export const pointPic = pointer;
 
 export const randomMovie = () => {
     let arr = [];
@@ -40,3 +41,7 @@ export const yearsOptions = [
     2023, 2022, 2021, 2020, 2019, 2018, 2017, 2016, 2015, 2014, 2013, 2012, 2011, 2010, 
     2000, 1990, 1980, 1970, 1960, 1950, 1940, 1930, 1920, 1910, 1900, 1895
 ]
+
+export const randomSpin = (array) => {
+    return Math.floor((Math.random() * array.length))
+}
