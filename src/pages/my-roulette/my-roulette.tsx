@@ -9,12 +9,13 @@ import { addSlot, removeSlot } from 'services/roulette-model'
 import { Button } from 'ui/button/button'
 import { SearchCard } from 'components/search-card/search-card'
 import { RouletteBar } from 'components/roulette-bar/roulette-bar'
+import { Loader } from 'components/loader/loader'
 
 export const MyRoulette = () => {
     const [value, setValue] = useState(null);
     const [myValue, setMyValue] = useState(null);
     const [searchValue, setSearchValue] = useState(null);
-    const { data, error } = useGetBySearchNameQuery(searchValue ?? skipToken);
+    const { data, error, isLoading } = useGetBySearchNameQuery(searchValue ?? skipToken);
     const dispatch = useAppDispatch();
     const rouletteData = useAppSelector(state => state.roulette.dataArr);
 
@@ -81,6 +82,7 @@ export const MyRoulette = () => {
                 </form>
             </div>
             <ul className={styles.searchList}>
+            {isLoading && <Loader/>}
                 {data?.Search && data.Search.map((film: any)=> {
                     return (
                         <li className={styles.searchItem} key={film.index}>

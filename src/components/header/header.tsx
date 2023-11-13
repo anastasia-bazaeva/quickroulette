@@ -16,7 +16,7 @@ export const Header = () => {
                 <NavLink className={linkClass} to='/my-roulette'>
                     Рулетка 
                 </NavLink>
-                <NavLink className={linkClass} to=''>
+                <NavLink className={linkClass} to='/about'>
                     О проекте 
                 </NavLink>
             </div>

@@ -13,8 +13,8 @@ export const FilmCard = ({ data }:any) => {
                 <h2>{Genre}</h2>
                 {Poster === "N/A" ? <NoPoster /> : <img className={styles.image} src={Poster} alt='афиша фильма'/>}
                 <p>{Plot}</p>
-                <Link className={commonStyles.link} target={"_blank"} to={`https://www.imdb.com/title/${imdbID}/`}>
-                    <p>Перейти на страницу фильма на IMDB</p></Link>
+                <Link className={`${commonStyles.link} ${styles.link}`} target={"_blank"} to={`https://www.imdb.com/title/${imdbID}/`}>
+                    <p className={styles.linkText}>Перейти на страницу фильма на IMDB</p></Link>
             </div>
             : <div> Ничего не нашлось, попробуй еще разок.</div>}
         </>

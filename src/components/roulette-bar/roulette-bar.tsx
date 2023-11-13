@@ -6,11 +6,14 @@ import { useEffect, useState } from "react"
 import { useAppDispatch, useAppSelector } from "services/store"
 import commonStyles from '../../ui/common/common.module.css'
 import { clearData } from "services/roulette-model"
+import Modal from "components/modal/modal"
+import { List } from "components/list/list"
 
 export const RouletteBar = () => {
     const data = useAppSelector(state => state.roulette.dataArr);
     const dispatch = useAppDispatch();
     const [hasWinner, setWinner ] = useState(false);
+    const [modalOpened, setModalOpened] = useState(false);
     const [springs, api] = useSpring(() => ({
         from: { x: 0 },
       }))
@@ -35,12 +38,16 @@ export const RouletteBar = () => {
     }
 
     const redactHandle = () => {
-
+        setModalOpened(true)
     }
 
     const clearHandle = () => {
         dispatch(clearData())
     }
+
+    const closeAllModals = () => {
+        setModalOpened(false);
+      };
 
     useEffect(()=> {
         if(data.length < 4) {
@@ -54,7 +61,9 @@ export const RouletteBar = () => {
                 },
             });
         };
+        if(data.length < 1) setModalOpened(false)
     },[data.length]);
+
 
     return(
         data.length ? <div className={styles.wrapper}>
@@ -98,6 +107,9 @@ export const RouletteBar = () => {
                     <img className={styles.toolIcon} src={garbageIcon} alt='иконка мусорной корзины'/>
                 </div>
             </div>
+            {modalOpened && <Modal onClose={closeAllModals}>
+                    <List/>
+                </Modal>}
             <Button onClick={spinHandler} disabled={data.length < 4 ? true : false} text={data.length < 4 ? "Мйнймум 4 варйанта" : "Крутйть"}/>
         </div>
         : <h3 className={commonStyles.text}>Найди и добавь варианты в рулетку, или введи название фильма вручную</h3>

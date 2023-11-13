@@ -7,29 +7,17 @@ export const Footer = () => {
     return (
         <footer className={styles.container}>
             <ul className={styles.column}>
-            <NavLink className={linkClass} to=''>
+            <NavLink className={linkClass} to='/roulette'>
                 Что посмотреть
             </NavLink>
-            <NavLink className={linkClass} to=''>
+            <NavLink className={linkClass} to='my-roulette'>
                 Рулетка 
             </NavLink>
-            <NavLink className={linkClass} to=''>
+            <NavLink className={linkClass} to='/about'>
                 О проекте 
             </NavLink>
             </ul>
-            
-            <ul className={styles.column}>
-            <NavLink className={linkClass} to=''>
-                Что посмотреть
-            </NavLink>
-            <NavLink className={linkClass} to=''>
-                Рулетка 
-            </NavLink>
-            <NavLink className={linkClass} to=''>
-                О проекте 
-            </NavLink>
-            </ul>
-            <p>Сделано @cosm0nastya</p>
+            <p>Сделала @anastasia-bazaeva в 2023</p>
 
         </footer>
     )
