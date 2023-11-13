@@ -47,7 +47,7 @@ export const Main = () => {
             <h1 className={styles.mainText}>Даваи что-нйбудь посмотрйм</h1>
             <div className={styles.buttonZone}>
                 <Link className={styles.linkText} to='/roulette'><p>Cлучаиный выбор</p></Link>
-                <Link className={styles.linkText} to='/filter'><p>Фйльтр</p></Link>
+                {/* <Link className={styles.linkText} to='/filter'><p>Фйльтр</p></Link> */}
                 <Link className={styles.linkText} to='/my-roulette'><p>Создать рулетку</p></Link>
             </div>
         </section>

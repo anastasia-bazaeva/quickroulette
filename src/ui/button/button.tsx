@@ -8,7 +8,7 @@ type ButtonProps ={
     onClick?: () => void
 }
 
-export const Button = ({ text, size = 'default', theme = 'default', onClick, disabled }: ButtonProps) => {
+export const Button = ({ text, size, theme = 'default', onClick, disabled }: ButtonProps) => {
     
     const colorClass = () => {
         if(theme === 'pale') return styles.pale;
@@ -16,7 +16,7 @@ export const Button = ({ text, size = 'default', theme = 'default', onClick, dis
         return styles.default;
     }
     const style = colorClass();
-
+    
     const className = `${styles.button} ${style}`;
     return (
         <button onClick={onClick} className={className} disabled={disabled}>{text}</button>

@@ -7,6 +7,7 @@
     font-weight: bold;
     font-family: 'Ifkica';
     cursor: pointer;
+    width: 270px;
 }
 .button:hover {
     opacity: 0.8;
@@ -21,8 +22,6 @@
     background: none;
     color: var(--colors-interface-white);
     border: 2px solid var(--colors-interface-primary);
-    /* background-color: var(--colors-interface-primary); */
-    /* color: var(--colors-interface-dark-surface)  */
 }
 
 .pale {

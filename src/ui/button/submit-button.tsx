@@ -4,10 +4,11 @@ type ButtonProps ={
     text: string;
     size?: string;
     theme?: string;
+    disabled?: boolean;
     onClick: (e: any) => void
 }
 
-export const SubmitButton = ({ text, size = 'default', theme = 'default', onClick }: ButtonProps) => {
+export const SubmitButton = ({ text, size = 'default', theme = 'default', onClick, disabled }: ButtonProps) => {
     
     const colorClass = () => {
         if(theme === 'pale') return styles.pale;
@@ -18,6 +19,6 @@ export const SubmitButton = ({ text, size = 'default', theme = 'default', onClic
 
     const className = `${styles.button} ${style}`;
     return (
-        <button onClick={(e) => onClick(e)} className={className}>{text}</button>
+        <button onClick={(e) => onClick(e)} className={className} disabled={disabled}>{text}</button>
     )
 }

@@ -1,49 +1,28 @@
-import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { createSlice } from '@reduxjs/toolkit';
 
-export type Slot = {
-    id: number;
-    name: string;
-    image: string;
-    description?: string;
-    url: string;
-}
 export type RouletteState = {
-    dataArr: null | Array<Slot>;
-    searchArr: null | any;
-    isLoading: boolean;
-    isFailed: boolean;
-    error?: string | null | undefined;
+    dataArr: Array<string>;
 }
 
 const initialState: RouletteState = {
-    dataArr: null,
-    searchArr: null,
-    isLoading: false,
-    isFailed: false,
-    error: null,
+    dataArr: [],
   };
 
 export const rouletteModel = createSlice({
     name: 'roulette',
     initialState,
     reducers: {
-        setData: (state, action: PayloadAction<Array<Slot> | null>) => {
-            state.dataArr = action.payload;
+        addSlot: (state, action) => {
+            state.dataArr.push(action.payload);
         },
-        setSearch: (state, action) => {
-            state.searchArr = action.payload;
-        },
-        clearSearch: (state) => {
-            state.searchArr = null;
+        removeSlot: (state, action) => {
+            state.dataArr = state.dataArr.filter(item => item !== action.payload);
         },
         clearData: (state) => {
-            state.dataArr = null;
-            state.isLoading = false;
-            state.isFailed = false;
-            state.error = null;
-            state.searchArr = null;
+            state.dataArr = [];
         },
+
     }
 });
-export const { setData, setSearch, clearSearch, clearData } = rouletteModel.actions;
+export const { addSlot, removeSlot, clearData } = rouletteModel.actions;
 export default rouletteModel.reducer

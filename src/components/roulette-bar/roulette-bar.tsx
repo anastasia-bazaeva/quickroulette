@@ -1,17 +1,15 @@
-import { pointPic, randomSpin } from "utils/utils"
+import { garbageIcon, pencilIcon, pointPic, randomSpin } from "utils/utils"
 import styles from './roulette-bar.module.css'
 import { Button } from "ui/button/button"
 import { animated, useSpring } from '@react-spring/web'
-import { useState } from "react"
-
-const data = [
-'Batman',
-'The Thing',
-'King Speaks',
-'Titanic'
-]
+import { useEffect, useState } from "react"
+import { useAppDispatch, useAppSelector } from "services/store"
+import commonStyles from '../../ui/common/common.module.css'
+import { clearData } from "services/roulette-model"
 
 export const RouletteBar = () => {
+    const data = useAppSelector(state => state.roulette.dataArr);
+    const dispatch = useAppDispatch();
     const [hasWinner, setWinner ] = useState(false);
     const [springs, api] = useSpring(() => ({
         from: { x: 0 },
@@ -35,8 +33,31 @@ export const RouletteBar = () => {
         }
         return data.indexOf(title) % 2 ? `${styles.item}` : `${styles.item} ${styles.accentItem}`
     }
+
+    const redactHandle = () => {
+
+    }
+
+    const clearHandle = () => {
+        dispatch(clearData())
+    }
+
+    useEffect(()=> {
+        if(data.length < 4) {
+            setWinner(false);
+            api.start({
+                from: {
+                    x: 0,
+                },
+                to: {
+                    x: 0,
+                },
+            });
+        };
+    },[data.length]);
+
     return(
-        <div className={styles.wrapper}>
+        data.length ? <div className={styles.wrapper}>
             <div id='container' className={styles.container}>
                 <img className={styles.pic} src={pointPic} alt="указатель рулетки"/>
                 <div id='list' className={styles.list}>
@@ -54,7 +75,7 @@ export const RouletteBar = () => {
                             </animated.div>
                             )
                     })}
-                    {data.map((title) => {
+                    {data.length > 3 && data.map((title) => {
                         return (
                             <animated.div 
                             className={boxColor(title)}
@@ -69,7 +90,16 @@ export const RouletteBar = () => {
                     })}
                 </div>
             </div>
+            <div className={styles.toolbar}>
+                <div onClick={redactHandle} className={styles.tool}>Редактировать
+                    <img className={styles.toolIcon} src={pencilIcon} alt='иконка редактирования'/>
+                </div>
+                <div onClick={clearHandle} className={styles.tool}>Очистить
+                    <img className={styles.toolIcon} src={garbageIcon} alt='иконка мусорной корзины'/>
+                </div>
+            </div>
             <Button onClick={spinHandler} disabled={data.length < 4 ? true : false} text={data.length < 4 ? "Мйнймум 4 варйанта" : "Крутйть"}/>
         </div>
+        : <h3 className={commonStyles.text}>Найди и добавь варианты в рулетку, или введи название фильма вручную</h3>
     )
 }

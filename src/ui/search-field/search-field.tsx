@@ -7,11 +7,14 @@ type SearchFieldTypes = {
 }
 
 export const SearchField = ({isDisabled, value, onChange}:SearchFieldTypes) => {
+    
     return (
         <input className={styles.field} 
         disabled={isDisabled}
         value={value}
         onChange={onChange}
-        placeholder="Введи название фильма"></input>
+        type='text'
+        placeholder="Введи название фильма"
+        maxLength={50}></input>
     )
 }

@@ -9,6 +9,8 @@ import video1 from '../ui/pics/72f38ef3-234e-404f-8413-5f24dea154a0.mp4';
 import wildWasteland from '../ui/pics/Perk_wild_wasteland.png';
 import wildWastelandPale from '../ui/pics/Perk_wild_wasteland.webp';
 import pointer from '../ui/pics/pointer-icon.svg';
+import garbage from '../ui/pics/garbagecan.svg';
+import pencil from '../ui/pics/pen.svg'
 
 export const pics = [
     pic1,
@@ -26,6 +28,8 @@ export const pickRandPick = () => {
 export const backVid = video1;
 export const loaderPic = wildWasteland;
 export const pointPic = pointer;
+export const garbageIcon = garbage;
+export const pencilIcon = pencil;
 
 export const randomMovie = () => {
     let arr = [];
