@@ -12,6 +12,11 @@
     opacity: 0.8;
 }
 
+.button:disabled {
+    color: grey;
+    border: 2px solid grey;
+}
+
 .default {
     background: none;
     color: var(--colors-interface-white);

@@ -10,10 +10,10 @@ export const Header = () => {
                 <span className={styles.fancy}>QuickRoulette</span>
                 </Link>
             <div className={styles.navBar}>
-                <NavLink className={linkClass} to=''>
+                <NavLink className={linkClass} to='/roulette'>
                     Что посмотреть
                 </NavLink>
-                <NavLink className={linkClass} to=''>
+                <NavLink className={linkClass} to='/my-roulette'>
                     Рулетка 
                 </NavLink>
                 <NavLink className={linkClass} to=''>
