@@ -16,5 +16,6 @@
 }
 
 .linkText {
-    color: var(--colors-interface-white)
+    color: var(--colors-interface-primary);
+    font-size: 16px;
 }
